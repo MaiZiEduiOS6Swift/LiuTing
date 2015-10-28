@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="0Mc-E3-JMP">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+    </dependencies>
+    <scenes>
+        <!--WeChat UI-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="WeChatUI" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hFM-Z8-6UB" customClass="ZPPChatToolBar" customModule="WeChatUI" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="VIW-PW-cI5"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem style="plain" id="rQH-Im-YBJ">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="0Bk-de-ctj">
+                                            <rect key="frame" x="20" y="5" width="35" height="35"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <animations/>
+                                            <state key="normal" image="chat_bottom_voice_nor"/>
+                                            <connections>
+                                                <action selector="voiceButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="a88-8o-Fao"/>
+                                            </connections>
+                                        </button>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" id="I6S-ie-Hzu">
+                                        <textField key="customView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="输入消息内容" textAlignment="natural" minimumFontSize="17" id="g8F-2K-eXC">
+                                            <rect key="frame" x="65" y="7" width="97" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" returnKeyType="send" enablesReturnKeyAutomatically="YES"/>
+                                            <connections>
+                                                <outlet property="delegate" destination="BYZ-38-t0r" id="5bJ-tZ-hiD"/>
+                                            </connections>
+                                        </textField>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" id="Pos-Kj-1gp">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="r3L-FA-dwY">
+                                            <rect key="frame" x="172" y="5" width="35" height="35"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <animations/>
+                                            <state key="normal" title="Button" image="chat_bottom_smile_nor"/>
+                                        </button>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" id="7Jg-MX-YiX">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="pVL-C8-t0v">
+                                            <rect key="frame" x="217" y="5" width="35" height="35"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <animations/>
+                                            <state key="normal" title="Button" image="chat_bottom_up_nor"/>
+                                            <connections>
+                                                <action selector="upButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UC6-XO-e6u"/>
+                                            </connections>
+                                        </button>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ajv-Gj-ZlV" customClass="ZPPMessagesScrollView" customModule="WeChatUI" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="69" width="600" height="487"/>
+                                <animations/>
+                            </scrollView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="ajv-Gj-ZlV" secondAttribute="trailing" id="DjU-kh-2ZZ"/>
+                            <constraint firstItem="ajv-Gj-ZlV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="N6d-eZ-dfX"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="hFM-Z8-6UB" secondAttribute="bottom" id="UgQ-Md-mOa"/>
+                            <constraint firstAttribute="trailing" secondItem="hFM-Z8-6UB" secondAttribute="trailing" id="V4F-f7-MHk"/>
+                            <constraint firstItem="hFM-Z8-6UB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="aOM-SN-3Nc"/>
+                            <constraint firstItem="ajv-Gj-ZlV" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="5" id="eAo-Gc-2Tu"/>
+                            <constraint firstItem="hFM-Z8-6UB" firstAttribute="top" secondItem="ajv-Gj-ZlV" secondAttribute="bottom" id="gMr-xn-10u"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="WeChat UI" id="RqJ-f3-zfP"/>
+                    <connections>
+                        <outlet property="chatToolBar1" destination="hFM-Z8-6UB" id="TTF-O1-UFF"/>
+                        <outlet property="msgScrollView1" destination="ajv-Gj-ZlV" id="l0f-Ti-H78"/>
+                        <outlet property="msgTextField1" destination="g8F-2K-eXC" id="uvx-OC-W3i"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1408" y="402"/>
+        </scene>
+        <!--Received Message Item Controller-->
+        <scene sceneID="5PG-xk-PtC">
+            <objects>
+                <viewController storyboardIdentifier="ReceivedMessageItemController" id="g7G-53-deV" customClass="ZPPReceivedMessageItemController" customModule="WeChatUI" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Iz2-zO-3TM"/>
+                        <viewControllerLayoutGuide type="bottom" id="PBy-Cm-nzk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xtG-Mn-e8C">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eWS-oF-HSB">
+                                <rect key="frame" x="0.0" y="478" width="600" height="122"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon02" translatesAutoresizingMaskIntoConstraints="NO" id="rqk-fg-lPv">
+                                        <rect key="frame" x="542" y="3" width="50" height="47"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="mlP-S2-Hxz"/>
+                                            <constraint firstAttribute="height" constant="47" id="qVi-fQ-bAh"/>
+                                        </constraints>
+                                    </imageView>
+                                    <view tag="10" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ss0-UA-7SA" customClass="UIControl">
+                                        <rect key="frame" x="312" y="3" width="222" height="114"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="stc-Zy-BcR">
+                                                <rect key="frame" x="13" y="12" width="184" height="82"/>
+                                                <animations/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="184" id="6nL-Ic-vr0"/>
+                                                    <constraint firstAttribute="height" constant="82" id="vSE-AN-Sz3"/>
+                                                </constraints>
+                                                <string key="text">阿凡达舒服水电费水电费水电费的方大幅度放松放松放松地方式地方asdkjfalsjf;asjf;aslj;lsbj;lajl;sjdflsajdf;lasdfj;alsdfj;lasfj;alfasdkfas'kdf'askdf'sakdf'askdf'kas;dfka'sdf</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="stc-Zy-BcR" secondAttribute="trailing" constant="25" id="S0U-jo-JBv"/>
+                                            <constraint firstItem="stc-Zy-BcR" firstAttribute="leading" secondItem="Ss0-UA-7SA" secondAttribute="leading" constant="13" id="eGm-fh-gRo"/>
+                                            <constraint firstItem="stc-Zy-BcR" firstAttribute="top" secondItem="Ss0-UA-7SA" secondAttribute="top" constant="12" id="kHd-Wy-7Za"/>
+                                            <constraint firstAttribute="bottom" secondItem="stc-Zy-BcR" secondAttribute="bottom" constant="20" id="wLV-an-Jnl"/>
+                                        </constraints>
+                                        <connections>
+                                            <action selector="dehighlightMessageView:" destination="g7G-53-deV" eventType="touchUpOutside" id="DXy-l5-xfi"/>
+                                            <action selector="dehighlightMessageView:" destination="g7G-53-deV" eventType="touchUpInside" id="mA2-Ay-6xP"/>
+                                            <action selector="highlightMessageView:" destination="g7G-53-deV" eventType="touchDown" id="6M7-Ub-wKe"/>
+                                        </connections>
+                                    </view>
+                                </subviews>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="Ss0-UA-7SA" secondAttribute="bottom" constant="5" id="YI2-fw-au3"/>
+                                    <constraint firstItem="rqk-fg-lPv" firstAttribute="leading" secondItem="Ss0-UA-7SA" secondAttribute="trailing" constant="8" id="YLb-xu-het"/>
+                                    <constraint firstItem="rqk-fg-lPv" firstAttribute="top" secondItem="Ss0-UA-7SA" secondAttribute="top" id="p2u-aE-psF"/>
+                                    <constraint firstAttribute="trailing" secondItem="rqk-fg-lPv" secondAttribute="trailing" constant="8" id="qw8-Vm-gh6"/>
+                                    <constraint firstItem="Ss0-UA-7SA" firstAttribute="top" secondItem="eWS-oF-HSB" secondAttribute="top" constant="3" id="zUe-6G-IWl"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="eWS-oF-HSB" firstAttribute="leading" secondItem="xtG-Mn-e8C" secondAttribute="leading" id="1MA-cP-DGe"/>
+                            <constraint firstAttribute="trailing" secondItem="eWS-oF-HSB" secondAttribute="trailing" id="fRH-pG-kyG"/>
+                            <constraint firstItem="PBy-Cm-nzk" firstAttribute="top" secondItem="eWS-oF-HSB" secondAttribute="bottom" id="lM7-de-mOu"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="avatar" destination="rqk-fg-lPv" id="I6H-aL-sgT"/>
+                        <outlet property="msgBackground" destination="Ss0-UA-7SA" id="rKh-hi-GQV"/>
+                        <outlet property="msgLabel" destination="stc-Zy-BcR" id="hyI-Q0-qs4"/>
+                        <outlet property="msgLabelHeight" destination="vSE-AN-Sz3" id="3tP-eb-fGk"/>
+                        <outlet property="msgLabelWidth" destination="6nL-Ic-vr0" id="fUk-ek-Ji8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mup-0o-VXM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1254" y="1074"/>
+        </scene>
+        <!--Sent Message Item Controller-->
+        <scene sceneID="XxI-6W-VGG">
+            <objects>
+                <viewController storyboardIdentifier="SentMessageItemController" id="VVV-hG-eS0" customClass="ZPPSentMessageItemController" customModule="WeChatUI" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="JXR-ef-j4S"/>
+                        <viewControllerLayoutGuide type="bottom" id="zM4-mM-Dzu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="caQ-lS-yGx">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Drp-gZ-9XK">
+                                <rect key="frame" x="0.0" y="478" width="600" height="122"/>
+                                <subviews>
+                                    <view tag="10" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="laU-rG-zBE" customClass="UIControl">
+                                        <rect key="frame" x="66" y="3" width="222" height="114"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EJ4-Yp-D6H">
+                                                <rect key="frame" x="25" y="12" width="184" height="82"/>
+                                                <animations/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="82" id="2N0-A8-1oL"/>
+                                                    <constraint firstAttribute="width" constant="184" id="pfn-aV-CGK"/>
+                                                </constraints>
+                                                <string key="text">阿凡达舒服水电费水电费水电费的方大幅度放松放松放松地方式地方asdkjfalsjf;asjf;aslj;lsbj;lajl;sjdflsajdf;lasdfj;alsdfj;lasfj;alfasdkfas'kdf'askdf'sakdf'askdf'kas;dfka'sdf</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="EJ4-Yp-D6H" secondAttribute="trailing" constant="13" id="dLi-ZE-xeb"/>
+                                            <constraint firstAttribute="bottom" secondItem="EJ4-Yp-D6H" secondAttribute="bottom" constant="20" id="fqd-Uw-3eg"/>
+                                            <constraint firstItem="EJ4-Yp-D6H" firstAttribute="leading" secondItem="laU-rG-zBE" secondAttribute="leading" constant="25" id="mLM-71-A5C"/>
+                                            <constraint firstItem="EJ4-Yp-D6H" firstAttribute="top" secondItem="laU-rG-zBE" secondAttribute="top" constant="12" id="ma9-Ec-nf3"/>
+                                        </constraints>
+                                        <connections>
+                                            <action selector="dehighlightMessageView:" destination="VVV-hG-eS0" eventType="touchUpInside" id="FHv-PN-0WK"/>
+                                            <action selector="dehighlightMessageView:" destination="VVV-hG-eS0" eventType="touchUpOutside" id="mDH-vB-qm7"/>
+                                            <action selector="highlightMessageView:" destination="VVV-hG-eS0" eventType="touchDown" id="1Cv-Ha-YOJ"/>
+                                        </connections>
+                                    </view>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon01" translatesAutoresizingMaskIntoConstraints="NO" id="Ubz-VY-Sx4">
+                                        <rect key="frame" x="8" y="3" width="50" height="47"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="7zq-ph-hqD"/>
+                                            <constraint firstAttribute="height" constant="47" id="QzC-5v-rvn"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstItem="Ubz-VY-Sx4" firstAttribute="leading" secondItem="Drp-gZ-9XK" secondAttribute="leading" constant="8" id="79M-0C-df9"/>
+                                    <constraint firstItem="laU-rG-zBE" firstAttribute="leading" secondItem="Ubz-VY-Sx4" secondAttribute="trailing" constant="8" id="E4q-jG-PiY"/>
+                                    <constraint firstAttribute="bottom" secondItem="laU-rG-zBE" secondAttribute="bottom" constant="5" id="Gi3-Zc-7vv"/>
+                                    <constraint firstItem="laU-rG-zBE" firstAttribute="top" secondItem="Drp-gZ-9XK" secondAttribute="top" constant="3" id="leC-np-3Bb"/>
+                                    <constraint firstItem="Ubz-VY-Sx4" firstAttribute="top" secondItem="laU-rG-zBE" secondAttribute="top" id="tFp-gF-Vid"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Drp-gZ-9XK" secondAttribute="trailing" id="WBQ-jj-BVW"/>
+                            <constraint firstAttribute="bottom" secondItem="Drp-gZ-9XK" secondAttribute="bottom" id="mKa-vl-rWu"/>
+                            <constraint firstItem="Drp-gZ-9XK" firstAttribute="leading" secondItem="caQ-lS-yGx" secondAttribute="leading" id="pvo-bF-mOm"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="avatar" destination="Ubz-VY-Sx4" id="bD8-Hg-lIc"/>
+                        <outlet property="msgBackground" destination="laU-rG-zBE" id="bKd-jV-J1S"/>
+                        <outlet property="msgLabel" destination="EJ4-Yp-D6H" id="zwf-fw-1cb"/>
+                        <outlet property="msgLabelHeight" destination="2N0-A8-1oL" id="5ZI-IY-vQl"/>
+                        <outlet property="msgLabelWidth" destination="pfn-aV-CGK" id="6gk-JX-IbT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gu8-DS-EzZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2066" y="402"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="z9T-r3-mpL">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0Mc-E3-JMP" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Gmh-KH-GCD">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="wI3-5T-QHb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TUK-CU-iOJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="596" y="402"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="chat_bottom_smile_nor" width="68" height="68"/>
+        <image name="chat_bottom_up_nor" width="68" height="68"/>
+        <image name="chat_bottom_voice_nor" width="68" height="68"/>
+        <image name="icon01" width="200" height="200"/>
+        <image name="icon02" width="200" height="200"/>
+    </resources>
+</document>
